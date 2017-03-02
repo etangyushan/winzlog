@@ -62,8 +62,8 @@ int zc_profile_inner(int flag, const char *file, const long line, const char *fm
 		_putenv( "ZLOG_PROFILE_ERROR=d:\\tmp\\error.log" ); // C4996
 		debug_log = getenv("ZLOG_PROFILE_DEBUG");
 		error_log = getenv("ZLOG_PROFILE_ERROR");
-		printf("debug_log:%s\n",debug_log);
-		printf("error_log:%s\n",error_log);
+		//printf("debug_log:%s\n",debug_log);
+		//printf("error_log:%s\n",error_log);
 
 	}
 
