@@ -1,25 +1,36 @@
-ÔÚ WinZlog »ù´¡ÉÏµÄ¹¤³Ì 
+åœ¨ WinZlog åŸºç¡€ä¸Šçš„å·¥ç¨‹ 
 https://github.com/lopsd07/WinZlog.git
 
-Ê¹ÓÃVS2010½¨Á¢µÄÍêÕû¹¤³Ì¡£
+ä½¿ç”¨VS2010å»ºç«‹çš„å®Œæ•´å·¥ç¨‹ã€‚
 
-µ±Ç°Ä¿Â¼µÄ Release ÎÄ¼ş¼ĞÏÂÓĞVS2010±àÒëÉú³ÉµÄ.libºÍ.dll¼°zlogÍ·ÎÄ¼ş
+å½“å‰ç›®å½•çš„ Release æ–‡ä»¶å¤¹ä¸‹æœ‰VS2010ç¼–è¯‘ç”Ÿæˆçš„.libå’Œ.dllåŠzlogå¤´æ–‡ä»¶
 
 Release\bin
-¹¤³Ì±àÒëÉú³ÉµÄ dll,
-²âÊÔdemo:test.exe£¬
-zlogÅäÖÃÎÄ¼ş:zlog.conf 
+
+
+å·¥ç¨‹ç¼–è¯‘ç”Ÿæˆçš„ dll,
+
+æµ‹è¯•demo:test.exeï¼Œ
+
+zlogé…ç½®æ–‡ä»¶:zlog.conf 
+
 
 Release\demo
-test.c: test¹¤³ÌÊ¹ÓÃµÄ²âÊÔ´úÂë,±àÒëºóÉú³É test.exe
+
+
+test.c: testå·¥ç¨‹ä½¿ç”¨çš„æµ‹è¯•ä»£ç ,ç¼–è¯‘åç”Ÿæˆ test.exe
+
 
 Release\head
-zlog.h£ºzlogÍ·ÎÄ¼ş
+
+zlog.hï¼šzlogå¤´æ–‡ä»¶
 
 Release\lib
-¹¤³Ì±àÒëÉú³ÉµÄ lib
 
-±àÒë¹¤³ÌÒÀÀµÁ½¸ö¿â£º
+å·¥ç¨‹ç¼–è¯‘ç”Ÿæˆçš„ lib
+
+
+ç¼–è¯‘å·¥ç¨‹ä¾èµ–ä¸¤ä¸ªåº“ï¼š
 
 Requires the glob function from the Unixem project: 
 http://synesis.com.au/software/unixem.html 
