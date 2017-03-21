@@ -19,7 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\Release\demo\demo.c" />
+    <ClCompile Include="..\Release\demo\test.c" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{813831EE-3093-4707-851E-D881DDE92B4C}</ProjectGuid>

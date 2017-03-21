@@ -1,15 +1,23 @@
-WinZlog
-=================
+在 WinZlog 基础上的工程 
+https://github.com/lopsd07/WinZlog.git
 
-##Zlog on Windows
+使用VS2010建立的完整工程。
 
-在zlog Linux版https://github.com/HardySimpson/zlog
+当前目录的 Release 文件夹下有VS2010编译生成的.lib和.dll及zlog头文件
 
-和Windows上的移植https://github.com/pattheaux/zlog
+Release\bin
+工程编译生成的 dll,
+测试demo:test.exe，
+zlog配置文件:zlog.conf 
 
-的基础上使用VS2010建立的完整工程。
+Release\demo
+test.c: test工程使用的测试代码,编译后生成 test.exe
 
-Release文件夹下有VS2010编译生成的.lib和.dll及zlog头文件可以根据zlog文档直接在使用。
+Release\head
+zlog.h：zlog头文件
+
+Release\lib
+工程编译生成的 lib
 
 编译工程依赖两个库：
 
@@ -18,40 +26,3 @@ http://synesis.com.au/software/unixem.html
 
 Requires the pthreads-win32 library: 
 http://www.sourceware.org/pthreads-win32/
-
-Project tree
-
-    ├─extlib  Requires libs
-    │  ├─Pre-built.2
-    │  │  ├─dll
-    │  │  │  ├─x64
-    │  │  │  └─x86
-    │  │  ├─include
-    │  │  └─lib
-    │  │      ├─x64
-    │  │      └─x86
-    │  └─unixem-1.9.1
-    │      ├─build
-    │      ├─doc
-    │      │  └─html
-    │      │      └─1.9.1
-    │      ├─include
-    │      ├─include_error
-    │      ├─lib
-    │      ├─src
-    │      │  └─internal
-    │      └─test
-    ├─Release  VS2010 output .lib .dll and zlog include file
-    │  ├─bin
-    │  ├─demo
-    │  ├─head
-    │  └─lib
-    ├─test   
-    └─zlog   VS2010 Project
-    ├─bin
-    ├─doc
-    ├─lib
-    ├─Release
-    ├─src
-    ├─test
-    └─tools
