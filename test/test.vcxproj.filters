@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\zlog\test\test_hello.c">
+    <ClCompile Include="..\Release\demo\demo.c">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

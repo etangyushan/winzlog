@@ -68,7 +68,7 @@
     <IncludePath>..\extlib\Pre-built.2\include;..\extlib\unixem-1.9.1\include;$(IncludePath)</IncludePath>
     <LibraryPath>..\extlib\Pre-built.2\lib\x86;..\extlib\unixem-1.9.1\lib;$(LibraryPath)</LibraryPath>
     <TargetExt>.dll</TargetExt>
-    <OutDir>$(SolutionDir)$(PlatformShortName)\$(Configuration)\</OutDir>
+    <OutDir>$(SolutionDir)\$(Configuration)\</OutDir>
     <TargetName>$(ProjectName)_$(Configuration)</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -111,7 +111,10 @@
       <ModuleDefinitionFile>zlog.def</ModuleDefinitionFile>
     </Link>
     <PostBuildEvent>
-      <Command>copy $(OutDir)$(TargetName)$(TargetExt) $(SolutionDir)dll\</Command>
+      <Command>copy $(OutDir)$(TargetName)$(TargetExt) $(SolutionDir)\lib\$(PlatformShortName)\$(Configuration)\
+copy $(OutDir)$(TargetName).lib $(SolutionDir)\lib\$(PlatformShortName)\$(Configuration)\
+copy $(OutDir)$(TargetName)$(TargetExt) $(SolutionDir)\..\Release\bin
+copy $(OutDir)$(TargetName).lib $(SolutionDir)\..\Release\lib</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -125,11 +128,12 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>pthreadVSE2.lib;unixem.vc10.dll.debug.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>pthreadVSE2.lib;unixem_vc7.debug.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <ModuleDefinitionFile>zlog.def</ModuleDefinitionFile>
     </Link>
     <PostBuildEvent>
-      <Command>move $(OutDir)$(TargetName)$(TargetExt) $(SolutionDir)dll\</Command>
+      <Command>copy $(OutDir)$(TargetName)$(TargetExt) $(SolutionDir)\lib\$(PlatformShortName)\$(Configuration)\
+copy $(OutDir)$(TargetName).lib $(SolutionDir)\lib\$(PlatformShortName)\$(Configuration)\</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -150,9 +154,11 @@
       <AdditionalDependencies>pthreadVSE2.lib;unixem.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
-      <Command>copy $(OutDir)$(TargetName)$(TargetExt) $(SolutionDir)\..\Release\bin
+      <Command>copy $(OutDir)$(TargetName)$(TargetExt) $(SolutionDir)\lib\$(PlatformShortName)\$(Configuration)\
+copy $(OutDir)$(TargetName).lib $(SolutionDir)\lib\$(PlatformShortName)\$(Configuration)\
+copy $(OutDir)$(TargetName)$(TargetExt) $(SolutionDir)\..\Release\bin
 copy $(OutDir)$(TargetName).lib $(SolutionDir)\..\Release\lib
-copy $(OutDir)$(TargetName)$(TargetExt) $(SolutionDir)\bin</Command>
+ </Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -174,9 +180,8 @@ copy $(OutDir)$(TargetName)$(TargetExt) $(SolutionDir)\bin</Command>
       <AdditionalDependencies>pthreadVC2.lib;unixem.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
-      <Command>copy $(OutDir)$(TargetName)$(TargetExt) $(SolutionDir)\..\Release\bin\x64
-copy $(OutDir)$(TargetName).lib $(SolutionDir)\..\Release\lib\x64
-copy $(OutDir)$(TargetName)$(TargetExt) $(SolutionDir)\bin\x64</Command>
+      <Command>copy $(OutDir)$(TargetName)$(TargetExt) $(SolutionDir)\lib\$(PlatformShortName)\$(Configuration)\
+copy $(OutDir)$(TargetName).lib $(SolutionDir)\lib\$(PlatformShortName)\$(Configuration)\</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>

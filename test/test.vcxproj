@@ -19,7 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\zlog\test\test_hello.c" />
+    <ClCompile Include="..\Release\demo\demo.c" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{813831EE-3093-4707-851E-D881DDE92B4C}</ProjectGuid>
@@ -69,7 +69,7 @@
     <LinkIncremental>true</LinkIncremental>
     <IncludePath>..\zlog\src;$(IncludePath)</IncludePath>
     <LibraryPath>..\zlog\lib;$(LibraryPath)</LibraryPath>
-    <OutDir>$(SolutionDir)dll\</OutDir>
+    <OutDir>$(SolutionDir)\..\test\$(Configuration)</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
@@ -81,7 +81,7 @@
     <LinkIncremental>false</LinkIncremental>
     <IncludePath>..\zlog\src;$(IncludePath)</IncludePath>
     <LibraryPath>..\Release\lib;$(LibraryPath)</LibraryPath>
-    <OutDir>$(SolutionDir)bin\</OutDir>
+    <OutDir>$(SolutionDir)\..\test\$(Configuration)</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
@@ -100,7 +100,13 @@
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>zlog_Debug.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <Version>
+      </Version>
+      <AdditionalLibraryDirectories>$(SolutionDir)\lib\$(PlatformShortName)\$(Configuration)\</AdditionalLibraryDirectories>
     </Link>
+    <PostBuildEvent>
+      <Command>copy  $(SolutionDir)\..\test\$(Configuration)\test.exe $(SolutionDir)\..\Release\bin</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -129,8 +135,12 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalDependencies>zlog.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>zlog_Release.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)\lib\$(PlatformShortName)\$(Configuration)\</AdditionalLibraryDirectories>
     </Link>
+    <PostBuildEvent>
+      <Command>copy  $(SolutionDir)\..\test\$(Configuration)\test.exe $(SolutionDir)\..\Release\bin</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
